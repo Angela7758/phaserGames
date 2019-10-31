@@ -452,7 +452,6 @@ function help() {
     window.open('/pdf.pdf');
 }
 
-
 function preload() {
     this.load.image('top3img', 'img/main/top3img.png');
     this.load.image('backGround', 'img/main/backGround.png');
@@ -484,7 +483,7 @@ function create() {
     //teamNameInput = me.add.dom( 110, teamStartY + teams.length*teamHight - 20).createFromHTML("<div id = \"myTeamNameInput\" style = \"display: none\">Nom: <input type=\"text\" id=\"nameField\"><button id = \"InputTeamNameYes\" type=\"button\">Oui</button><button id = \"InputTeamNameNo\" type=\"button\">Non</button></div>");
 
     this.add.image(640, 370, 'backGround');
-    explication = this.add.image(670, 225, 'explication');
+    explication = this.add.image(640, 200, 'explication');
 
     this.add.text(50, tiltleStartFrom, str_team, style_title);
     this.add.text(tourStartX, tiltleStartFrom, str_tour + ' 1', style_title);
@@ -494,8 +493,8 @@ function create() {
     this.add.text(tourStartX + tourwidth * 3 + tourStartX, tiltleStartFrom, 'Top', style_title);
     for (var j = 0; j < 3; j++) {
         var tourOffsetX = tourwidth * j * 1.1;
-        this.add.text(tourStartX - 19 + tourOffsetX, subTiltleStartFrom, 'Prévision', style_subtitle);
-        this.add.text(tourStartX - 10 + tourwidth * 0.4 + tourOffsetX, subTiltleStartFrom, 'Réel', style_subtitle);
+        this.add.text(tourStartX - 19 + tourOffsetX, subTiltleStartFrom, 'Prevision', style_subtitle);
+        this.add.text(tourStartX - 10 + tourwidth * 0.4 + tourOffsetX, subTiltleStartFrom, 'Reel', style_subtitle);
         this.add.text(tourStartX - 10 + tourwidth * 0.69 + tourOffsetX, subTiltleStartFrom, 'Score', style_subtitle);
     }
     this.addTeamButton = this.add.image(110, teamStartY + teams.length * teamHight + 20, 'addTeam');
@@ -511,7 +510,7 @@ function create() {
     this.finalButton.on('pointerdown', () => top3());
     this.finalButton.visible = false;
 
-    this.aideButton = this.add.image(1200, 705, 'aide');
+    this.aideButton = this.add.image(100, 150, 'aide');
     this.aideButton.setInteractive();
     this.aideButton.on('pointerdown', () => help());
 
@@ -614,9 +613,9 @@ function create() {
     // Each 1000 ms call onEvent
     this.top3img = this.add.image(top3StartX, top3StartY, 'top3img');
 
-    this.top1text = this.add.text(top3StartX - 220, top3StartY - 50, 'top1team', style_top3);
+    this.top1text = this.add.text(top3StartX - 200, top3StartY - 50, 'top1team', style_top3);
     this.top2text = this.add.text(top3StartX - 50, top3StartY - 10, 'top2team', style_top3);
-    this.top3text = this.add.text(top3StartX + 130, top3StartY, 'top3team', style_top3);
+    this.top3text = this.add.text(top3StartX + 120, top3StartY, 'top3team', style_top3);
 
 }
 
