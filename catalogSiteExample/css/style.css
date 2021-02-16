@@ -1,0 +1,304 @@
+.container {
+  position: relative;
+  font-family: Arial;
+  margin-bottom: 30px;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 24px;
+    right: 1px;
+    background-color: rgba(247, 247, 247, 0.81);
+    color: #00b3b3;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 51px;
+}
+
+.search {
+    /* margin-top: 30px; */
+    position: relative;
+    height:  110px;
+    text-align: left;
+    line-height: 30px;
+    padding-left: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #eff0f4;
+    padding: 10px;
+}
+
+.search .search-icon {
+    float: left;
+    height: 45px;
+    width: 45px;
+    font-size: 40px;
+    margin: 20px;
+	padding: 3px;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    background: #00b3b3;
+    border-radius: 50%;
+}
+
+.search .search-input {
+    float: left;
+    width: 75%;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    box-sizing: border-box;
+    margin-left: 10%;
+    margin-top: 20px;
+	padding-inline: 10px;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+
+element.style {
+}
+.search .search-results .result-item {
+    background: #ffffffff;
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+
+element.style {
+    display: block;
+}
+.search .search-results {
+    /* left: 44px; */
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 33px;
+    /* right: 50px; */
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+	box-shadow: 0 0.3rem 0.5rem #666;
+	margin-left: 10%;
+	margin-top: 45px;
+}
+
+.search .search-results .result-item {
+    background: #ffffffff;
+    color: #000;
+    margin: 0px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.link{
+	text-align: right;
+	margin-top: -30px;
+	margin-right: 2%;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+
+.column>img{
+  width: 100%;
+  height: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+hr {
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+h1{
+	font-size: 24px;
+	color: black;
+	font-weight: 600;
+}
+h3{
+	font-size: 12px;
+	color :darkgrey;
+	font-weight: 400;
+	
+}
+h4{
+	font-size: 13px;
+	color: black;
+	font-weight: 400;
+	
+}
+.item_title{
+	    color: black;
+		text-align: center;
+		font-size: 16px;
+	    font-weight: 600;
+	    line-height: 20px;
+	    padding-top: 5px;
+}
+
+.subtheme_title{
+    text-align: center;
+    color: white;
+    width: max-content;
+    padding-inline: 10px;
+	margin: auto;
+	margin-top: -10px;
+	position: relative;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 18px;
+}
+
+.cat_title h3{
+	color:gray;
+}
+
+
+
+/* nav levels*/
+
+.header{
+    background-color: #00b3b3;
+    margin-left: 270px;
+    margin-top: -60px;
+}
+
+.header .nav li{
+    float: left;
+    width:  260px;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+	font-size: 18px;
+	font-weight: 500;
+    list-style-type: none;
+
+}
+
+.header .nav .homeicon{
+	width: 5%;
+    text-align: center;
+}
+
+.header .nav li a{
+    color: #fff;
+    position: relative;
+    display: block;
+    padding: 0;
+	font-size: 18px;
+	font-weight: 600;
+    padding-inline: 10px;
+
+}
+
+.nav>li>a:hover,.nav>li>a:focus {
+    background-color: #1ca9ad;
+    border-color: #1ca9ad;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.header .second-nav li a{
+	color: black;
+	text-align: left;
+	background-color: #ffffffc7;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.header .second-nav li a:hover {
+    background-color: white;
+    border-color: white;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.header .third-nav li a{
+	color: black;
+	text-align: left;
+	background-color: white;
+	padding-inline: 10px;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.header .third-nav li a:hover {
+    background-color: white;
+    border-color: white;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+
+.header .nav li .second-nav{
+	width: 260px;
+	display: none;
+	position: relative;
+	padding-left: inherit;
+	font-size: 15px;
+	font-weight: 500;
+}
+.header .nav li .second-nav li{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+	font-weight: 500;
+	
+}
+.header .nav li .second-nav li .third-nav{
+	color: black;
+	width: 150%;
+	height: 200px;
+	display: none;
+	margin-left: 100%;
+	margin-top: -40px;
+	padding: inherit;
+	
+}
+
+footer
+{
+	background-color: black;
+    color: white;
+    font-size: 14px;
+	color: darkgrey;
+    text-align: center;
+}
+}

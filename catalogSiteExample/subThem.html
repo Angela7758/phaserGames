@@ -1,0 +1,157 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bibliothèque des supports de savoirs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+		var thems;//themes
+		function data(json) {
+			thems = json;
+		}
+		
+		var compétences;
+		function compétence(comp_json){
+			compétences = comp_json;
+		}
+	</script>
+	<script type="text/javascript" src="data/data.js"></script>
+	<script type="text/javascript" src="js/generateItem.js"></script>
+</head>
+<body>
+	<a href="index.html">
+	<img src="img/logo.png" alt="Logo">
+	</a>
+	
+	<!-- nav -->
+ 	<script type="text/javascript">
+		$(function(){
+			var _this1=null;
+			$('.nav>li').hover(function(){
+				_this1=$(this);
+				_this1.find('.second-nav').show();
+				var _this2=null;
+				_this1.find('.second-nav').find('li').hover(function(){
+					_this2=$(this);
+					_this2.find('.third-nav').show();
+					_this2.find('.third-nav').hover(function(){
+						$(this).show();
+					},function(){
+						$(this).hide();
+					});
+				},function(){
+					_this2.find('.third-nav').hide();
+				});
+			},function(){
+				_this1.find('.second-nav').hide();
+			});
+		});
+	</script>
+	
+<div class="header">
+	<ul class="nav">
+		<li class="active homeicon"><a class="glyphicon glyphicon-home" style="line-height: inherit;" href="index.html" ></a></li>
+		<li><a href="">THÈMES</a>
+			<ul class="second-nav" id="theme_dropdown">
+				<li><a href="">thème</a>
+					<ul class="third-nav">
+						<li><a href="">subThem1</a></li>
+						<li><a href="">subThem1</a></li>
+						<li><a href="">subThem1</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="">COMPÉTENCES</a>
+			<ul class="second-nav">
+				<li>
+					<a href=" themLink "><b>EN COURS DE CONSTRUCTION</b></a>
+					<ul class="third-nav" style="display: none;">
+						<li><a href=" Credit immobilier ">EN COURS DE CONSTRUCTION</a></li>
+						<li><a href=" Credit immobilier ">EN COURS DE CONSTRUCTION</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href=" themLink "><b>EN COURS DE CONSTRUCTION</b></a>
+					<ul class="third-nav" style="display: none;">
+						<li><a href=" Credit immobilier ">EN COURS DE CONSTRUCTION</a></li>
+						<li><a href=" Credit immobilier ">EN COURS DE CONSTRUCTION</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		
+	</ul>
+</div> 
+	
+
+	 <img src="img/biblioBG.png" alt="biblioBG" style="width:100%;">
+	  <div class="text-block">
+<!-- 		<p>BIBLIOTHEQUE DES</p>
+		<p>SUPPORTS DE SAVOIR</p> -->
+	  </div>
+	
+	<div class="search">
+		<input type="text" class="search-input" placeholder="Mot(s) clé(s)" />
+		<i class="material-icons search-icon search-clear">clear</i>
+		<i class="material-icons search-icon search-start">search</i>
+		<div class="search-results"></div>
+	</div>
+	<div id="cats" class="container">
+		<template id="row_template">
+			<div class="row">
+			  <div class="cat_title">
+				<h1></h1>
+				<h4 class="link"><a href="">TOUT VOIR</a></h4>
+			  </div>
+			</div>
+		</template>
+		
+		<template id="col_template">
+		  <a class="column" href="" >
+			<img class="item_img" src="img/item.png" alt="item">
+			<p class="subtheme_title"></p>
+			<p class="item_title"></p>
+			
+		  </a>
+		</template>
+		
+		<script>
+			generateDropDownList(thems);
+			generateSubThemItmes(thems);
+		</script>
+	
+		<!-- <div class="row">
+		  <div class="cat_title">
+		  	<h1>CAT2</h1>
+		    <h4 class="link"><a href="index.html">TOUT VOIR</a></h4>
+		  </div>
+		  <div class="column" >
+			<img src="img/item1.png" alt="item">
+			<p>Some text..</p>
+		  </div>
+		  <div class="column" >
+			<img src="img/item1.png" alt="item">
+			<p>Some text..</p>
+		  </div>
+		  <div class="column">
+			<img src="img/item1.png" alt="item">
+			<p>Some text..</p>
+		  </div>
+		</div> -->
+	</div>
+
+
+	
+
+	
+
+	<script type="text/javascript" src="js/searchBox.js"></script>
+</body>
+<footer>Copyright @ ESBanque</footer>
+</html>
