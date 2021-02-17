@@ -15,16 +15,16 @@
 			thems = json;
 		}
 		
-		var compétences;
-		function compétence(comp_json){
-			compétences = comp_json;
+		var Compétences;
+		function Compétence(comp_json){
+			Compétences = comp_json;
 		}
 	</script>
 	<script type="text/javascript" src="data/data.js"></script>
 	<script type="text/javascript" src="js/generateItem.js"></script>
 </head>
 <body>
-	<a href="index.html">
+	<a href="index.html" >
 	<img src="img/logo.png" alt="Logo">
 	</a>
 	
@@ -56,7 +56,7 @@
 <div class="header">
 	<ul class="nav">
 		<li class="active homeicon"><a class="glyphicon glyphicon-home" style="line-height: inherit;" href="index.html" ></a></li>
-		<li><a>THÈMES</a>
+<!-- 		<li class="first_level"><a href="">THÈMES</a>
 			<ul class="second-nav" id="theme_dropdown">
 				<li><a href="">thème</a>
 					<ul class="third-nav">
@@ -67,13 +67,13 @@
 				</li>
 			</ul>
 		</li>
-		<li><a >COMPÉTENCES</a>
+		<li class="first_level"><a href="">COMPÉTENCES</a>
 			<ul class="second-nav">
 				<li>
-					<a ><b>EN COURS DE CONSTRUCTION</b></a>
+					<a><b>EN COURS DE CONSTRUCTION</b></a>
 					<ul class="third-nav" style="display: none;">
-						<li><a>EN COURS DE CONSTRUCTION</a></li>
-						<li><a>EN COURS DE CONSTRUCTION</a></li>
+						<li><a >EN COURS DE CONSTRUCTION</a></li>
+						<li><a >EN COURS DE CONSTRUCTION</a></li>
 					</ul>
 				</li>
 				<li>
@@ -86,14 +86,37 @@
 			</ul>
 		</li>
 		
-	</ul>
+	</ul> -->
 </div> 
 	
+<!-- 	<nav class="navbar" style="margin-top: -59px;" >
+	  <div class="container-fluid" style="background-color: #00b3b3;margin-left: 270px;">
+		<ul id = "nav_bar" class="nav navbar-nav">
+		  <li class="active"><a class="glyphicon glyphicon-home" href="index.html" ></a></li>
+		  
+		  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">THEMES <span class="caret"></span></a>
+			<ul class="dropdown-menu" id="theme_dropdown">
+			</ul>
+		  </li>
+		  
+		  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CompétenceS <span class="caret"></span></a>
+			<ul class="dropdown-menu" id="comp_dropdown">
+			  <li><a href="">Comp-1</a>
+					<ul class="dropdown-menu">
+						<li><a href="">Comp-2</a></li>
+					</ul>
+			  </li>
+			</ul>
+		  </li>
+		</ul>
+	  </div>
+	</nav> -->
+	
 
-	 <img src="img/biblioBG.png" alt="biblioBG" style="width:100%;">
+<!--	 <img src="img/biblioBG.png" alt="biblioBG" style="width:100%;">
 	  <div class="text-block">
-<!-- 		<p>BIBLIOTHEQUE DES</p>
-		<p>SUPPORTS DE SAVOIR</p> -->
+ 		<p>BIBLIOTHEQUE DES</p>
+		<p>SUPPORTS DE SAVOIR</p> 
 	  </div>
 	
 	<div class="search">
@@ -102,6 +125,8 @@
 		<i class="material-icons search-icon search-start">search</i>
 		<div class="search-results"></div>
 	</div>
+	
+	-->
 	<div id="cats" class="container">
 		<template id="row_template">
 			<div class="row">
@@ -121,30 +146,17 @@
 		  </a>
 		</template>
 		
-		<script>
-			generateCats(thems);
-			generateDropDownList(thems);
-			generateThemItmes(thems);
+		<iframe id="myIframe" src=""  ></iframe>
+		
+		<script type="text/javascript">
+			function iframeDidLoad() {
+				var _parameter = window.location.search;
+				var _itemUrl = _parameter.substring(1);
+				document.getElementById('myIframe').src = _itemUrl;
+			} 
+			iframeDidLoad();
 		</script>
-	
-		<!-- <div class="row">
-		  <div class="cat_title">
-		  	<h1>CAT2</h1>
-		    <h4 class="link"><a href="index.html">TOUT VOIR</a></h4>
-		  </div>
-		  <div class="column" >
-			<img src="img/item1.png" alt="item">
-			<p>Some text..</p>
-		  </div>
-		  <div class="column" >
-			<img src="img/item1.png" alt="item">
-			<p>Some text..</p>
-		  </div>
-		  <div class="column">
-			<img src="img/item1.png" alt="item">
-			<p>Some text..</p>
-		  </div>
-		</div> -->
+
 	</div>
 
 
