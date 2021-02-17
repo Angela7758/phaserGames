@@ -58,7 +58,7 @@ for(var i = 0; i < thems.length;i++)
 			var current_item = current_sub_theme["items"][k];
 			arrTitles[componentNumber] = current_theme["theme"];
 			arrContents[componentNumber] =current_item["title"];
-			arrLinks[componentNumber] = current_item["link"];
+			arrLinks[componentNumber] = "Item.html?"+current_item["link"];
 			componentNumber++;
 		 }
 	}

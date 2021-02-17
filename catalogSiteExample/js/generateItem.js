@@ -5,7 +5,7 @@ function generateCol(item, sub_theme_label, subTemColor) {
 
   if(item["link"]!=="")
   {
-	itemCopy.href = item["link"];
+	itemCopy.href = "Item.html?" + item["link"];
 	itemCopy.target="_blank"; 
   }
 
@@ -23,7 +23,7 @@ function generateRow(cat, _themIndex) {
   var rowContent = rowTemp.content.querySelector("div");
   var rowCopy = rowContent.cloneNode(true);
   rowCopy.getElementsByTagName("h1")[0].textContent = cat["theme"];
-  rowCopy.getElementsByTagName("h4")[0].getElementsByTagName("a")[0].href="Them.html#"+ _themIndex;
+  rowCopy.getElementsByTagName("h4")[0].getElementsByTagName("a")[0].href="Them.html?"+ _themIndex;
 
   var count = 0;
 
@@ -61,18 +61,35 @@ function generateDropDownList(cats)
 
 	for (var i = 0; i < cats.length; i++) {
 		var current_theme = cats[i];
-
-		themeDropDowns = themeDropDowns.concat("<li><a href=\"Them.html#" + i + " \" ><b>" + cats[i]["theme"] +"</b></a>");
-		themeDropDowns = themeDropDowns.concat("<ul class=\"third-nav\">");
-
+		var _themeHTML = "";
+		var _ifHaveSubTheme = true;
+		
 		for (var j = 0; j < current_theme["subThemes"].length; j++) {
 			 var current_sub_theme = current_theme["subThemes"][j];
-			 if(current_sub_theme["theme2"] !== current_theme["theme"])
+			 if(current_sub_theme["theme2"] === current_theme["theme"])
 			 {
-				 themeDropDowns = themeDropDowns.concat("<li><a href=\"subThem.html#" + i + "#" + j + " \" > " + current_sub_theme["theme2"] +"</a></li>");
+				_ifHaveSubTheme = false;
 			 }
 		 }
-		 themeDropDowns = themeDropDowns.concat("</ul></li>");
+		
+		if(_ifHaveSubTheme)
+		{
+			_themeHTML = _themeHTML.concat("<li><a href=\"Them.html?" + i + "\" ><b>" + current_theme["theme"] +"</b></a>");
+			_themeHTML = _themeHTML.concat("<ul class=\"third-nav\">");
+
+			for (var j = 0; j < current_theme["subThemes"].length; j++) {
+				 var current_sub_theme = current_theme["subThemes"][j];
+				 if(current_sub_theme["theme2"] !== current_theme["theme"])
+				 {
+					 _themeHTML = _themeHTML.concat("<li><a href=\"subThem.html?" + i + "?" + j + " \" > " + current_sub_theme["theme2"] +"</a></li>");
+				 }
+			 }
+			 _themeHTML = _themeHTML.concat("</ul></li>");
+		}
+		else{
+			_themeHTML = _themeHTML.concat("<li><a href=\"subThem.html?" + i + "?0\" ><b>" + current_theme["theme"] +"</b></a>");
+		}
+		 themeDropDowns = themeDropDowns.concat(_themeHTML);
 	}
 
 	themesDroplistContent.innerHTML = themeDropDowns;
@@ -81,8 +98,8 @@ function generateDropDownList(cats)
 
 function generateSubThemItmes(_thems)
 {
-	var _themeIndex = document.URL.split('#')[1];
-	var _subThemeIndex = document.URL.split('#')[2];
+	var _themeIndex = document.URL.split('?')[1];
+	var _subThemeIndex = document.URL.split('?')[2];
 
 	var _theme = _thems[_themeIndex];
 	var _subTheme = _theme["subThemes"][_subThemeIndex];
@@ -102,7 +119,7 @@ function generateSubThemItmes(_thems)
 			_innerContent = _innerContent.concat("<a class=\"column\" ");
 			if(_item["link"]!=="")
 			{
-				_innerContent = _innerContent.concat(" href=\""+_item["link"]+"\" target=\"_blank\"");
+				_innerContent = _innerContent.concat(" href=\"Item.html?"+_item["link"]+"\" target=\"_blank\"");
 			}
 			_innerContent = _innerContent.concat("><img class=\"item_img\" src=\"" + _item["img"] + "\"><p class=\"subtheme_title\" style=\"background:" +_subTheme["subTehmeColor"]+"\">"+ _subTheme["theme2"] + "</p><p class=\"item_title\" >" + _item["title"] + "</p></a>");
 
@@ -115,7 +132,7 @@ function generateSubThemItmes(_thems)
 
 function generateThemItmes(_thems)
 {
-	var _themeIndex = document.URL.split('#')[1];
+	var _themeIndex = document.URL.split('?')[1];
 
 	var _theme = _thems[_themeIndex];
 	var _innerContent = "";
@@ -125,7 +142,7 @@ function generateThemItmes(_thems)
 	for(var _k = 0;   _k< _theme["subThemes"].length; _k++)
 	{
 		var _subTheme = _theme["subThemes"][_k];
-		_innerContent = _innerContent.concat("<div class=\"row\"><h1>" +_subTheme["theme2"] + "</h1><h4 class=\"link\" target=\"_blank\"><a href=\"subThem.html#" +_themeIndex +"#" +_k +"\">TOUT VOIR</a></h4>");
+		_innerContent = _innerContent.concat("<div class=\"row\"><h1>" +_subTheme["theme2"] + "</h1><h4 class=\"link\" target=\"_blank\"><a href=\"subThem.html?" +_themeIndex +"?" +_k +"\">TOUT VOIR</a></h4>");
 
 		var _catsContent = document.getElementById("cats");
 
@@ -136,7 +153,7 @@ function generateThemItmes(_thems)
 			_innerContent = _innerContent.concat("<a class=\"column\" ");
 			if(_item["link"]!=="")
 			{
-				_innerContent = _innerContent.concat(" href=\""+_item["link"]+"\" target=\"_blank\"");
+				_innerContent = _innerContent.concat(" href=\"Item.html?"+_item["link"]+"\" target=\"_blank\"");
 			}
 			_innerContent = _innerContent.concat("><img class=\"item_img\" src=\"" + _item["img"] + "\"><p class=\"subtheme_title\" style=\"background:" +_subTheme["subTehmeColor"]+"\">"+ _subTheme["theme2"] + "</p><p class=\"item_title\" >" + _item["title"] + "</p></a>");
 
