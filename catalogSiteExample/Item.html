@@ -56,7 +56,7 @@
 <div class="header">
 	<ul class="nav">
 		<li class="active homeicon"><a class="glyphicon glyphicon-home" style="line-height: inherit;" href="index.html" ></a></li>
-<!-- 		<li class="first_level"><a href="">THÈMES</a>
+		<li class="first_level"><a href="">THÈMES</a>
 			<ul class="second-nav" id="theme_dropdown">
 				<li><a href="">thème</a>
 					<ul class="third-nav">
@@ -67,7 +67,7 @@
 				</li>
 			</ul>
 		</li>
-		<li class="first_level"><a href="">COMPÉTENCES</a>
+		<li class="first_level"><a>COMPÉTENCES</a>
 			<ul class="second-nav">
 				<li>
 					<a><b>EN COURS DE CONSTRUCTION</b></a>
@@ -86,9 +86,8 @@
 			</ul>
 		</li>
 		
-	</ul> -->
+	</ul>
 </div> 
-	
 <!-- 	<nav class="navbar" style="margin-top: -59px;" >
 	  <div class="container-fluid" style="background-color: #00b3b3;margin-left: 270px;">
 		<ul id = "nav_bar" class="nav navbar-nav">
@@ -113,12 +112,9 @@
 	</nav> -->
 	
 
-<!--	 <img src="img/biblioBG.png" alt="biblioBG" style="width:100%;">
-	  <div class="text-block">
- 		<p>BIBLIOTHEQUE DES</p>
-		<p>SUPPORTS DE SAVOIR</p> 
-	  </div>
-	
+	<!--  <img src="img/biblioBG.png" alt="biblioBG" style="width:100%;"> -->
+	 
+	<!--
 	<div class="search">
 		<input type="text" class="search-input" placeholder="Mot(s) clé(s)" />
 		<i class="material-icons search-icon search-clear">clear</i>
@@ -146,25 +142,31 @@
 		  </a>
 		</template>
 		
-		<iframe id="myIframe" src=""  ></iframe>
-		
-		<script type="text/javascript">
-			function iframeDidLoad() {
-				var _parameter = window.location.search;
-				var _itemUrl = _parameter.substring(1);
-				document.getElementById('myIframe').src = _itemUrl;
-			} 
-			iframeDidLoad();
-		</script>
+
 
 	</div>
+	
+	<iframe id="myIframe" src=""  ></iframe>
+	
+	<script type="text/javascript">
+	generateDropDownList(thems);
+
+		
+		function iframeDidLoad() {
+			var _parameter = window.location.search;
+			var _itemUrl = _parameter.substring(1);
+			document.getElementById('myIframe').src = _itemUrl;
+		} 
+		iframeDidLoad();
+		
+	</script>
 
 
 	
 
 	
 
-	<script type="text/javascript" src="js/searchBox.js"></script>
+	<!-- <script type="text/javascript" src="js/searchBox.js"></script> -->
 </body>
-<footer>Copyright @ ESBanque</footer>
+<footer >Copyright @ ESBanque</footer>
 </html>
