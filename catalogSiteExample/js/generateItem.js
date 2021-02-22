@@ -19,16 +19,30 @@ function generateCol(item, sub_theme_label, subTemColor) {
 }
 
 function generateRow(cat, _themIndex) {
-  var rowTemp = document.getElementById("row_template");
-  var rowContent = rowTemp.content.querySelector("div");
-  var rowCopy = rowContent.cloneNode(true);
-  rowCopy.getElementsByTagName("h1")[0].textContent = cat["theme"];
-  rowCopy.getElementsByTagName("h4")[0].getElementsByTagName("a")[0].href="Them.html?"+ _themIndex;
+	var rowTemp = document.getElementById("row_template");
+	var rowContent = rowTemp.content.querySelector("div");
+	var rowCopy = rowContent.cloneNode(true);
+	rowCopy.getElementsByTagName("h1")[0].textContent = cat["theme"];
 
-  var count = 0;
+	var _ifHaveSubTheme = true;
+	for (var j = 0; j < cat["subThemes"].length; j++) {
+		 var current_sub_theme = cat["subThemes"][j];
+		 if(current_sub_theme["theme2"] === cat["theme"])
+		 {
+			_ifHaveSubTheme = false;
+			break;
+		 }
+	 }
 
-  for(var j = 0;  j < cat["subThemes"].length && count<3; j++)
-  {
+	if(_ifHaveSubTheme)
+		rowCopy.getElementsByTagName("h4")[0].getElementsByTagName("a")[0].href="Them.html?"+ _themIndex;
+	else
+		rowCopy.getElementsByTagName("h4")[0].getElementsByTagName("a")[0].href="subThem.html?"+ _themIndex + "?0";
+	
+	var count = 0;
+
+	for(var j = 0;  j < cat["subThemes"].length && count<3; j++)
+	{
 	  var subTemLabel = cat["subThemes"][j]["theme2"];
 	  var subTemColor = cat["subThemes"][j]["subTehmeColor"];
 	  var i;
@@ -36,11 +50,11 @@ function generateRow(cat, _themIndex) {
 		  count++;
 		rowCopy.appendChild(generateCol(cat["subThemes"][j]["items"][i], subTemLabel, subTemColor));
 	  }
-  }
+	}
 
 
 
-  return rowCopy;
+	return rowCopy;
 }
 
 function generateCats(cats){
@@ -69,6 +83,7 @@ function generateDropDownList(cats)
 			 if(current_sub_theme["theme2"] === current_theme["theme"])
 			 {
 				_ifHaveSubTheme = false;
+				break;
 			 }
 		 }
 		
